@@ -1,0 +1,6 @@
+<h2>List of users</h2>
+<ul *ngFor="let user of users">
+    <li style="text-decoration: underline; cursor: pointer">
+        <app-user [user]="user" routerLink="/details/{{ user.id }}"></app-user>
+    </li>
+</ul>

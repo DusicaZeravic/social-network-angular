@@ -1,0 +1,21 @@
+<div *ngIf="user">
+
+    <h4>Friends</h4>
+    <ul *ngIf="user.friends.length > 0; else noFriends">
+        <li *ngFor="let friend of user.friends">{{ friend.firstName }} {{ friend.surname }}</li>
+    </ul>
+    <ng-template #noFriends>No suggested friends</ng-template>
+
+    <h4>Friends of friends</h4>
+    <ul *ngIf="user.friendsOfFriends.length > 0; else noFriendsOfFriends">
+        <li *ngFor="let friend of user.friendsOfFriends">{{ friend.firstName }} {{ friend.surname }}</li>
+    </ul>
+
+    <ng-template #noFriendsOfFriends>No suggested friends</ng-template>
+    <h4>Suggested friends</h4>
+    <ul *ngIf="user.suggestedFriends.length > 0; else noSuggestedFriends">
+        <li *ngFor="let friend of user.suggestedFriends">{{ friend.firstName }} {{ friend.surname }}</li>
+    </ul>
+    <ng-template #noSuggestedFriends>No suggested friends</ng-template>
+
+</div>
